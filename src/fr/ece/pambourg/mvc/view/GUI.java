@@ -17,7 +17,6 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import fr.ece.pambourg.mvc.controller.Controller;
-import fr.ece.pambourg.mvc.model.Model;
 import fr.ece.pambourg.mvc.model.UserList;
 
 public class GUI extends AbstractView implements View {

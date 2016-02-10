@@ -1,12 +1,8 @@
 package fr.ece.pambourg.mvc.controller;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.swing.JTextField;
 import javax.swing.text.JTextComponent;
 
 import fr.ece.pambourg.mvc.model.UserList;
@@ -38,6 +34,7 @@ public class Controller implements GUIListener {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource().equals(textComponent)) {
 					userList.addUser(textComponent.getText());
+					textComponent.setText("");
 				}
 			}
 		};		
