@@ -1,13 +1,13 @@
 package fr.ece.pambourg.mvc.view;
 
-import fr.ece.pambourg.mvc.model.DataAccess;
+import fr.ece.pambourg.mvc.model.Model;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-public class GUI implements DataAccess {
+public class GUI extends AbstractView implements Model, View {
 
 	@Override
 	public String[] getData() {
@@ -19,7 +19,8 @@ public class GUI implements DataAccess {
 	private final Frame frame;
 	private final JList<String> list = new JList<>();
 
-	public GUI(String title, int width, int height) {
+	public GUI(String title, int width, int height, Model m) {
+		super(m);
 		frame = new JFrame(title);
 		frame.setSize(width, height);
 		((JFrame) frame).setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -58,8 +59,14 @@ public class GUI implements DataAccess {
 	}
 
 	public static void main(String[] args) {
-		GUI gui = new GUI("foo", 320, 240);
+		GUI gui = new GUI("foo", 320, 240, null);
 		gui.start();
+	}
+
+	@Override
+	public void setController(GUIListener controller) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

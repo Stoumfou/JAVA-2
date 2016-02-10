@@ -3,7 +3,7 @@ package fr.ece.pambourg.mvc.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserList implements DataAccess {
+public class UserList implements Model {
 	
 	private List<String> userList = new ArrayList<String>();
 	

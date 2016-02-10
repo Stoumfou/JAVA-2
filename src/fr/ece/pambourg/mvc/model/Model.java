@@ -1,6 +1,6 @@
 package fr.ece.pambourg.mvc.model;
 
-public interface DataAccess {
+public interface Model {
 
 	String[] getData();
 }
