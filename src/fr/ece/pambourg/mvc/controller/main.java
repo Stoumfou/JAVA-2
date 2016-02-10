@@ -15,10 +15,10 @@ public class main {
 		user.add("user1");
 		user.add("user2");
 		
-		UserList userList = new UserList(user);
-
+		//UserList userList = new UserList(user);
+/*
 		boolean res = userList.addUser("user3");		
-		System.out.println("Value of element "+userList.getUserList());
+		System.out.println("Value of element "+userList.getUserList());*/
 	}
 
 }

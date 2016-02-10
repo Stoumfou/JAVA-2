@@ -1,25 +1,31 @@
 package fr.ece.pambourg.mvc.view;
 
-import fr.ece.pambourg.mvc.model.Model;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.Observable;
 
-public class GUI extends AbstractView implements Model, View {
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
-	@Override
-	public String[] getData() {
-		// TODO Auto-generated method stub
+import fr.ece.pambourg.mvc.controller.Controller;
+import fr.ece.pambourg.mvc.model.Model;
+import fr.ece.pambourg.mvc.model.UserList;
 
-		return null;
-	}
+public class GUI extends AbstractView implements View {
 
 	private final Frame frame;
 	private final JList<String> list = new JList<>();
 
-	public GUI(String title, int width, int height, Model m) {
+	public GUI(String title, int width, int height, UserList m) {
 		super(m);
 		frame = new JFrame(title);
 		frame.setSize(width, height);
@@ -48,7 +54,9 @@ public class GUI extends AbstractView implements Model, View {
 		((JFrame) frame).getContentPane().add(panel);
 		panel.setLayout(new BorderLayout());
 		final JTextField textField = new JTextField();
+
 		panel.add(textField, BorderLayout.PAGE_START);
+		textField.addActionListener(this.getController().getAddUserListener(textField));
 		panel.add(list, BorderLayout.CENTER);
 	}
 
@@ -59,14 +67,18 @@ public class GUI extends AbstractView implements Model, View {
 	}
 
 	public static void main(String[] args) {
-		GUI gui = new GUI("foo", 320, 240, null);
-		gui.start();
+		UserList model=new UserList();
+		GUI gui=new GUI("Lab3",320,240,model);
+		Controller controller=new Controller(model,gui);
+		controller.start();
 	}
 
 	@Override
-	public void setController(GUIListener controller) {
+	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		
+		if(o.getClass().equals(UserList.class)) {
+			this.list.setListData(((UserList) o).getData()); 
+		}
 	}
 }
 

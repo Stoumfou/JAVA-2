@@ -21,6 +21,8 @@ public class Controller implements GUIListener {
 		super();
 		this.userList = userList;
 		this.view = view;
+		this.view.setController(this);
+		this.userList.addObserver(view);
 	}
 	
 	public void start()
@@ -34,13 +36,12 @@ public class Controller implements GUIListener {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				JTextField jft = new JTextField();
-				
+				if(e.getSource().equals(textComponent)) {
+					userList.addUser(textComponent.getText());
+				}
 			}
 		};		
-		JTextField jtf = new JTextField();
-		return null;
+		return al;
 	}
 	
 }

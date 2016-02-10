@@ -3,13 +3,12 @@ package fr.ece.pambourg.mvc.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserList implements Model {
+public class UserList extends java.util.Observable implements Model {
 	
 	private List<String> userList = new ArrayList<String>();
 	
-	public UserList(List<String> userList) {
+	public UserList() {
 		super();
-		this.userList = userList;
 	}
 
 	public List<String> getUserList() {
@@ -29,6 +28,8 @@ public class UserList implements Model {
 		else
 		{
 			this.userList.add(user);
+			this.setChanged();
+			this.notifyObservers();
 			return true;
 		}
 	}

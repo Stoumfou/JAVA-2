@@ -1,7 +1,7 @@
 package fr.ece.pambourg.mvc.view;
 import fr.ece.pambourg.mvc.model.Model;
 
-public abstract class AbstractView implements View{
+public abstract class AbstractView implements View {
 	protected GUIListener controller;
 	protected Model storageUser;
 	
@@ -14,5 +14,9 @@ public abstract class AbstractView implements View{
 	}
 	protected final GUIListener getController() {
 		return this.controller;
+	}
+	
+	public void setController(GUIListener controller) {
+		this.controller = controller;
 	}
 }
