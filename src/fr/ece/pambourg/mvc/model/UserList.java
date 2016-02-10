@@ -20,7 +20,7 @@ public class UserList {
 		this.userList = userList;
 	}
 
-	boolean addUser(String user)
+	public boolean addUser(String user)
 	{
 		if (user == null)
 		{
