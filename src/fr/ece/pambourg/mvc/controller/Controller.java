@@ -2,6 +2,7 @@ package fr.ece.pambourg.mvc.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
 
 import javax.swing.text.JTextComponent;
 
@@ -11,9 +12,9 @@ import fr.ece.pambourg.mvc.view.View;
 
 public class Controller implements GUIListener {
 	protected UserList userList;
-	protected View view;	
+	protected Set<View> view;	
 	
-	public Controller(UserList userList, View view) {
+	public Controller(UserList userList, Set<View> view) {
 		super();
 		this.userList = userList;
 		this.view = view;

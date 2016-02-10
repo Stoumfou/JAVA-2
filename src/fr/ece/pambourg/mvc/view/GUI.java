@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import fr.ece.pambourg.mvc.controller.Controller;
+import fr.ece.pambourg.mvc.model.Model;
 import fr.ece.pambourg.mvc.model.UserList;
 
 public class GUI extends AbstractView implements View {
@@ -65,12 +66,12 @@ public class GUI extends AbstractView implements View {
 		frame.setVisible(true);
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		UserList model=new UserList();
 		GUI gui=new GUI("Lab3",320,240,model);
 		Controller controller=new Controller(model,gui);
 		controller.start();
-	}
+	}*/
 
 	@Override
 	public void update(Observable o, Object arg) {
