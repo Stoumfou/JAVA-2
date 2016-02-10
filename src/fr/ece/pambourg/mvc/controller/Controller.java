@@ -7,5 +7,6 @@ import fr.ece.pambourg.mvc.model.UserList;
 
 public class Controller {
 
-	List<UserList> userList = new ArrayList<UserList>();
+	UserList userList = new UserList(null);
+	
 }

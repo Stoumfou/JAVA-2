@@ -1,12 +1,36 @@
 package fr.ece.pambourg.mvc.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserList {
 	
-	private String user;
+	private List<String> userList = new ArrayList<String>();
 	
+	public UserList(List<String> userList) {
+		super();
+		this.userList = userList;
+	}
+
+	public List<String> getUserList() {
+		return userList;
+	}
+
+	public void setUserList(List<String> userList) {
+		this.userList = userList;
+	}
+
 	boolean addUser(String user)
 	{
-		return true;
+		if (user == null)
+		{
+			return false;
+		}
+		else
+		{
+			this.userList.add(user);
+			return true;
+		}
 	}
 
 }
