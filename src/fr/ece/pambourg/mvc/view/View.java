@@ -1,6 +1,8 @@
 package fr.ece.pambourg.mvc.view;
 
-public class View implements Model {
+import fr.ece.pambourg.mvc.model.DataAccess;
+
+public class View implements DataAccess {
 
 	@Override
 	public String[] getData() {

@@ -8,8 +8,5 @@ import java.util.List;
 import fr.ece.pambourg.mvc.model.UserList;
 
 public class Controller {
-
-	public static void main(String[] args) {
-		
-	}	
+	
 }

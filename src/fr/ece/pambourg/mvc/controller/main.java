@@ -17,8 +17,7 @@ public class main {
 		
 		UserList userList = new UserList(user);
 
-		boolean res = userList.addUser("user3");
-		
+		boolean res = userList.addUser("user3");		
 		System.out.println("Value of element "+userList.getUserList());
 	}
 

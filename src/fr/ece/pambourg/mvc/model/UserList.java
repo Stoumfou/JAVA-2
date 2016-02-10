@@ -3,9 +3,7 @@ package fr.ece.pambourg.mvc.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.ece.pambourg.mvc.view.Model;
-
-public class UserList implements Model {
+public class UserList implements DataAccess {
 	
 	private List<String> userList = new ArrayList<String>();
 	
