@@ -3,7 +3,9 @@ package fr.ece.pambourg.mvc.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserList {
+import fr.ece.pambourg.mvc.view.Model;
+
+public class UserList implements Model {
 	
 	private List<String> userList = new ArrayList<String>();
 	
@@ -31,6 +33,14 @@ public class UserList {
 			this.userList.add(user);
 			return true;
 		}
+	}
+
+	@Override
+	public String[] getData() {
+		// TODO Auto-generated method stub
+		String[] res = new String[this.userList.size()];
+		res = this.userList.toArray(res);
+		return res;
 	}
 
 }
